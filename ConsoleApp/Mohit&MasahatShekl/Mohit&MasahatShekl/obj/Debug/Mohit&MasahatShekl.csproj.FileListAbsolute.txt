@@ -1,0 +1,8 @@
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\bin\Debug\Mohit&MasahatShekl.exe.config
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\bin\Debug\Mohit&MasahatShekl.exe
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\bin\Debug\Mohit&MasahatShekl.pdb
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\obj\Debug\Mohit&MasahatShekl.csproj.AssemblyReference.cache
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\obj\Debug\Mohit&MasahatShekl.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\obj\Debug\Mohit&MasahatShekl.csproj.CoreCompileInputs.cache
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\obj\Debug\Mohit&MasahatShekl.exe
+C:\Users\ASA2002\Desktop\taklif\Mohit&MasahatShekl\Mohit&MasahatShekl\obj\Debug\Mohit&MasahatShekl.pdb

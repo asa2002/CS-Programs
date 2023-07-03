@@ -1,0 +1,8 @@
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\bin\Debug\HajmeMokaab.exe.config
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\bin\Debug\HajmeMokaab.exe
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\bin\Debug\HajmeMokaab.pdb
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\obj\Debug\HajmeMokaab.csproj.AssemblyReference.cache
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\obj\Debug\HajmeMokaab.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\obj\Debug\HajmeMokaab.csproj.CoreCompileInputs.cache
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\obj\Debug\HajmeMokaab.exe
+C:\Users\ASA2002\Desktop\taklif\HajmeMokaab\HajmeMokaab\obj\Debug\HajmeMokaab.pdb

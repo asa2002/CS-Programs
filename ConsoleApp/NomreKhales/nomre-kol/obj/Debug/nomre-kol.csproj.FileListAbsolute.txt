@@ -1,0 +1,8 @@
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\bin\Debug\nomre-kol.exe.config
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\bin\Debug\nomre-kol.exe
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\bin\Debug\nomre-kol.pdb
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\obj\Debug\nomre-kol.csproj.AssemblyReference.cache
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\obj\Debug\nomre-kol.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\obj\Debug\nomre-kol.csproj.CoreCompileInputs.cache
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\obj\Debug\nomre-kol.exe
+C:\Users\ASA2002\Desktop\taklif\nomre-kol\nomre-kol\obj\Debug\nomre-kol.pdb

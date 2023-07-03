@@ -1,0 +1,8 @@
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\bin\Debug\Determinan.exe.config
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\bin\Debug\Determinan.exe
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\bin\Debug\Determinan.pdb
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\obj\Debug\Determinan.csproj.AssemblyReference.cache
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\obj\Debug\Determinan.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\obj\Debug\Determinan.csproj.CoreCompileInputs.cache
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\obj\Debug\Determinan.exe
+C:\Users\ASA2002\Desktop\taklif\Determinan\Determinan\obj\Debug\Determinan.pdb

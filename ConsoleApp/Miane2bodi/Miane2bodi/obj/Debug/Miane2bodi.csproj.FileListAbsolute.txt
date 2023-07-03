@@ -1,0 +1,8 @@
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\bin\Debug\Miane2bodi.exe.config
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\bin\Debug\Miane2bodi.exe
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\bin\Debug\Miane2bodi.pdb
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\obj\Debug\Miane2bodi.csproj.AssemblyReference.cache
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\obj\Debug\Miane2bodi.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\obj\Debug\Miane2bodi.csproj.CoreCompileInputs.cache
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\obj\Debug\Miane2bodi.exe
+C:\Users\ASA2002\Desktop\taklif\Miane2bodi\Miane2bodi\obj\Debug\Miane2bodi.pdb
