@@ -1,167 +1,81 @@
 ﻿using System;
-using System.Security.Cryptography;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-//                                           علی شجاعی امنیه --- کلاس برنامه سازی پیشرفته --- استاد غره الحمید   
-
-
-namespace App
+namespace Sudoku_Table
 {
-    class Project
+    internal class Program
     {
-        public static int size = 9;               // سایز جدول
-        public static int emptyNum = 0;           // آزایه خالی
-        public static int randomNum = 2;          // پر کردن عدد رندوم
-        public static int userNum = 1;            // پر کردن عدد توسط کاربر
-        public static double SPEED;               // سرعت حل
-
-        static void Main()
+        public int size = 9;
+        public int emptyArrey = 0;
+        public int randomNum = 2;
+        public int userNum = 1;
+        public double speed;
+        private int[,] sudokuFill(int[,] sudoku)
         {
-            int[,] sudoku = new int[size, size];
-
-            // انتخاب پر کردن با کاربر یا بصورت رندوم
-            int option = 0;
-            Console.WriteLine("Please choose your option between 1 or 2 : \n" + "1. Fill Sudoku by yourself\n" + "2. Fill Sudoku random");
-            option = Convert.ToInt32(Console.ReadLine());
-            if (option == userNum)
-            {
-                sudoku = sudokuFiller(sudoku);
-            }
-            else
-            {
-                // تعیین درجه سختی 
-                int difficulty = 0;
-                Console.WriteLine("Enter Difficulty: between 2-4");
-                difficulty = Convert.ToInt32(Console.ReadLine());
-                fillRandSudoku(ref sudoku, difficulty);
-            }
-
-            // چاپ اولیه جدول
-            Console.WriteLine("Sudoku:");
-            printCurrentSudoku(sudoku);
-
-            // سرعت حل
-            Console.WriteLine("Enter the speed that you want for solving:\n" + "1. Fast \n" + "2. Slow");
-            int speed = Convert.ToInt32(Console.ReadLine());
-            if (speed == 1)
-            {
-                SPEED = 0;
-            }
-            else
-            {
-                SPEED = 0.1;
-            }
-
-            // حل جدول
-            solver(ref sudoku);
-
-            // چاپ جواب نهایی
-            Console.WriteLine("Answer : ");
-            printCurrentSudoku(sudoku);
-
-            // چک کردن پر شدن جدول
-            if (isFullSudoku(sudoku))
-            {
-                System.Console.WriteLine("solved");
-            }
-        }
-
-        // پر کردن جدول توسط کاربر
-        private static int[,] sudokuFiller(int[,] sudoku)
-        {
-            int userInpInt = emptyNum;
-            string userInpStr;
-            bool isExists = false;
-
+            int userAdad = emptyArrey;
+            string userHarf;
+            bool dorost = false;
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    Console.WriteLine("The current sudoku:");
-                    printCurrentSudoku(sudoku);
+                    sudokuPrint(sudoku);
                     do
                     {
-                        Console.WriteLine("Enter Num [" + i + "][" + j + "]:");
-                        userInpStr = Console.ReadLine();
-                        if (
-                            userInpStr == "" ||
-                            userInpStr == " " ||
-                            userInpStr == null)
+                        Console.WriteLine("Adad morede nazar ra vared konid [" + i + "][" + j + "]:");
+                        userHarf = Console.ReadLine();
+                        if (userHarf == "" || userHarf == " " || userHarf == null)
                         {
-                            userInpInt = emptyNum;
+                            userAdad = emptyArrey;
                         }
                         else
                         {
-                            userInpInt = Convert.ToInt32(userInpStr);
+                            userAdad = Convert.ToInt32(userHarf);
                         }
-                        if (userInpInt > 9 || userInpInt < 0)
+                        if (userAdad > 9 || userAdad < 0)
                         {
-                            Console.WriteLine("ERROR: The number most between 0-9");
+                            Console.WriteLine("ERROR: Adad bayad beyne 0 ta 9 bashad");
                         }
-                        isExists = checkDuplicateNum(userInpInt, sudoku, i, j);
-
-                        if (isExists && userInpInt != emptyNum)
+                        dorost = copyCheck(userAdad, sudoku, i, j);
+                        if (dorost && userAdad != emptyArrey)
                         {
-                            Console.WriteLine("Repeated number in row or column is prohibited");
+                            Console.WriteLine("Adad tekrari dar satr ya sotoon!!");
                         }
                         else
                         {
-                            isExists = false;
+                            dorost = false;
                         }
-                    } while ((userInpInt > 9 || userInpInt < 0) || isExists);
-                    sudoku[i, j] = userInpInt;
+                    } while ((userAdad > 9 || userAdad < 0) || dorost);
+                    sudoku[i, j] = userAdad;
                 }
             }
             return sudoku;
         }
-
-        // چاپ جدول
-        private static void printCurrentSudoku(int[,] sudoku)
+        private void sudokuPrint(int[,] sudoku)
         {
             for (int i = 0; i < size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for(int j = 0; j < size; j++)
                 {
                     Console.Write(sudoku[i, j]);
                     if (j != 0 || j != size)
                     {
                         Console.Write(" ");
                     }
-
                 }
                 Console.Write("\n                  \n");
             }
         }
-        // چک کردن قوانین تکرار عدد
-        private static bool checkDuplicateNum(int num, int[,] sudoku, int x, int y)
+        private bool sudokuFull(int[,] sudoku)
         {
-            bool isExists = false;
-            for (int i = 0; i < size; i++)
+            for (int i=0; i < size; i++)
             {
-                // چک کردن در ستون
-                if (sudoku[i, y] == num)
+                for ( int j = 0; j < size; j++)
                 {
-                    isExists = true;
-                }
-                // چک کردن در سطر
-                if (sudoku[x, i] == num)
-                {
-                    isExists = true;
-                }
-            }
-
-            return isExists;
-        }
-
-        // چک کردن پر بودن جدول
-        private static bool isFullSudoku(int[,] sudoku)
-        {
-            for (int i = 0; i < size; i++)
-            {
-                for (int j = 0; j < size; j++)
-                {
-                    if (sudoku[i, j] == emptyNum)
+                    if (sudoku[i, j] == emptyArrey)
                     {
                         return false;
                     }
@@ -169,28 +83,40 @@ namespace App
             }
             return true;
         }
-
-        // پر کردن بصورت رندوم در جدول
-        private static void fillRandSudoku(ref int[,] sudoku, int difficulty)
+        private bool copyCheck(int num , int[ , ] sudoku , int x , int y)
         {
-            int[] rands = new int[difficulty];
-            Random r = new Random();
-            Random r2 = new Random();
+            bool right = false;
+            for (int i = 0;i < size; i++)
+            {
+                if (sudoku[i , y] == num)
+                {
+                    right = true;
+                }
+                if (sudoku[x , i] == num)
+                {
+                    right = true;
+                }
+            }
+            return right;
+        }
+        private void sudokuRandom(int[ , ] sudoku , int Sakhti)
+        {
+            int[] rand = new int[Sakhti];
+            Random A = new Random();
+            Random B = new Random();
             for (int i = 0; i < size; i++)
             {
-                // گرفتن اعداد رندوم
-                for (int k = 0; k < difficulty; k++)
+                for(int k = 0;k < size; k++)
                 {
-                    rands[k] = r.Next(0, size);
+                    rand[k] = A.Next(0, size);
                 }
-                // چک کردن تکرار
                 for (int j = 0; j < size; j++)
                 {
-                    if (rands.Contains(j))
+                    if (rand.detaile(j))
                     {
                         for (int z = 0; z < size; z++)
                         {
-                            if (!checkDuplicateNum(z, sudoku, i, j))
+                            if (!copyCheck(z , sudoku , i , j))
                             {
                                 sudoku[i, j] = z;
                             }
@@ -199,50 +125,78 @@ namespace App
                 }
             }
         }
-
-        // تابع بازگشتی جدول برای از سرگیری مراحل
-        private static bool solver(ref int[,] sudoku)
+        private bool restart(int [,] sudoku) 
         {
-            // چاپ مراحل بصورت پشت سرهم
             Console.Clear();
-            printCurrentSudoku(sudoku);
-            System.Threading.Thread.Sleep(
-    (int)System.TimeSpan.FromSeconds(SPEED).TotalMilliseconds);
+            sudokuPrint(sudoku);
+            System.Threading.Thread.Sleep((int)System.TimeSpan.FromSeconds(speed).TotalMilliseconds);
             Console.WriteLine("----------------------");
-
-
-            for (int i = 0; i < size; i++)
+            for (int i = 0;i < size; i++)
             {
-                for (int j = 0; j < size; j++)
+                for ( int j = 0; j < size; j++)
                 {
-                    if (sudoku[i, j] == emptyNum)
+                    if (sudoku[i, j] == emptyArrey)
                     {
                         for (int n = 1; n <= size; n++)
                         {
-                            // تایید و چاپ عدد در صورت رعایت قوانین تکرار
-                            if (!checkDuplicateNum(n, sudoku, i, j))
+                            if (!copyCheck(n , sudoku , i , j))
                             {
-                                sudoku[i, j] = n;
-                                // خروج از برنامه در صورت حل جدول
-                                if (solver(ref sudoku))
+                                sudoku[i , j] = n;
+                                if (restart(sudoku))
                                 {
                                     return true;
                                 }
                                 else
                                 {
-                                    // خالی کردن خانه قبلی درصورت قرار نگرفتن عدد
-                                    sudoku[i, j] = emptyNum;
+                                    sudoku[i , j] = emptyArrey;
                                 }
                             }
                         }
-                        // امکان چاپ تمام اعداد نیست پس به مرحله قبل برمیگردیم
                         return false;
                     }
                 }
             }
-            // اتمام مراحل و خروج از متود
             return true;
         }
+        static void Main(string[] args)
+        {
+            int[,] sudoku = new int[size, size];
+            int opt = 0;
+            Console.WriteLine("Lotfan gozine morede nazar ra entekhab konid :\n" + "1. Por kardan tavasote Karbar\n" + "2. Por kardan tavasote system");
+            opt = Convert.ToInt32(Console.ReadLine());
+            if (opt == userNum)
+            {
+                sudoku = sudokuFill(sudoku);
+            }
+            else
+            {
+                int sakhti = 0;
+                Console.WriteLine("Sakhti morede nazar ra vared konid az beyne 2 ta 4");
+                sakhti = Convert.ToInt32(Console.ReadLine());
+                sudokuRandom(sudoku, sakhti);
+            }
+            Console.WriteLine("Sudoku:");
+            sudokuPrint(sudoku);
 
+            Console.WriteLine("Speed:\n" + "1. Fast \n" + "2. Slow");
+            int speed = Convert.ToInt32(Console.ReadLine());
+            if (speed == 1)
+            {
+                speed = 0;
+            }
+            else
+            {
+                speed = 0.1;
+            }
+            restart(sudoku);
+
+            Console.WriteLine("Answer : ");
+            sudokuPrint(sudoku);
+
+            if (sudokuFull(sudoku))
+            {
+                Console.WriteLine("solved");
+            }
+        }
     }
 }
