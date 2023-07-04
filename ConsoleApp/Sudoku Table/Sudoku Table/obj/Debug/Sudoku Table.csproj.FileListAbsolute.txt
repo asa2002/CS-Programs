@@ -1,0 +1,8 @@
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\bin\Debug\Sudoku Table.exe.config
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\bin\Debug\Sudoku Table.exe
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\bin\Debug\Sudoku Table.pdb
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\obj\Debug\Sudoku Table.csproj.AssemblyReference.cache
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\obj\Debug\Sudoku Table.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\obj\Debug\Sudoku Table.csproj.CoreCompileInputs.cache
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\obj\Debug\Sudoku Table.exe
+C:\Users\Dear User\Desktop\Sudoku Table\Sudoku Table\obj\Debug\Sudoku Table.pdb
